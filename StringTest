@@ -1,0 +1,23 @@
+#coding=utf-8
+# a =raw_input("Enter a number :");
+# b = input("Enter a number :");
+# print(a);
+
+print("Hello,\
+World")
+
+a=1+2+3 + \
+    5;
+print a;
+
+print "Hello, \n World"
+
+print(r'asdfksdfad');
+
+print(r'sadfLKJSDKLF123\n');
+print("daslf\nadlfkkj");
+
+#"字符串格式化，可以使用字符串格式化操作符%"
+format="Hello,%s,%s,enough for ya?";
+values = ('World','Hot');
+print format%values;
