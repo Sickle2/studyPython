@@ -41,8 +41,14 @@ list=list("adfjadlf");
 print(list);
 
 num=list.count("a");
-print(num);
-list.reverse();     #reverse
-print(list);
-list.sort(); #sort
-print list;
+print(num)
+list.reverse()    #reverse
+print(list)
+list.sort() #sort
+print list
+
+
+print("---------------------------------")
+xxx=[1,678,23,879,345,546,2,67,3]
+xxx.sort()
+print xxx

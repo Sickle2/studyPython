@@ -75,5 +75,5 @@ class HuabanCrawler():
 
 if __name__ == '__main__':
     hc = HuabanCrawler()
-    hc.get_image_info(10)
+    hc.get_image_info(500)
     hc.down_images()
