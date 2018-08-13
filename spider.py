@@ -53,10 +53,10 @@ class HuabanCrawler():
         with open(imageName, 'wb') as fp:
             fp.write(content)
 
-    def get_image_info(self, num=20):
+    def get_image_info(self, num):
         """ 得到图片信息 """
         self.__process_data(self.__load_homePage())
-        for i in range((num-1)/20):
+        for i in range(num):
             self.__process_data(self.__load_more(self.images[-1]['id']))
         return self.images
 
