@@ -1,0 +1,26 @@
+#!/usr/bin/python
+# coding=utf-8
+
+from urllib import request
+
+from bs4 import BeautifulSoup
+
+if __name__ == "__main__":
+    url = "https://read.qidian.com/chapter/nmUdX63Hq4JwKI0S3HHgow2/5xvKChn7yOnM5j8_3RRvhw2";
+    head = {};
+    # 写入head，伪装成浏览器
+    head['User-Agent'] = 'https://read.qidian.com/chapter/nmUdX63Hq4JwKI0S3HHgow2/5xvKChn7yOnM5j8_3RRvhw2';
+    res = request.Request(url, headers=head);
+    # 获取页面内容
+    http = request.urlopen(res).read().decode('UTF-8');
+    http_soup = BeautifulSoup(http, 'lxml');
+    # print(http_soup);
+    chapters = http_soup.find_all('div', class_='read-content j_readContent');
+    # print(chapters);
+    download_soup = BeautifulSoup(str(chapters), 'lxml');
+    string = "";
+    for name in download_soup.find_all('p'):
+        string += name.string + '\n';
+    fp = open("test.txt", 'w');
+    fp.write(string);
+    fp.close();
